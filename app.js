@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 
 //ajouter la route stuff
-const stuffroutes = require('./routes/stuff');
+const stuffRoutes = require('./routes/stuff');
+//user route
+const userRoutes = require('./routes/user');
 
 // Pour gérer la requête POST venant de l'application front-end, on a besoin d'en extraire le corps JSON
 app.use(express.json());
@@ -42,6 +44,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/stuff', stuffroutes);
+app.use('/api/stuff', stuffRoutes);
+app.use('/api/auth', userRoutes);
 
 module.exports = app;
