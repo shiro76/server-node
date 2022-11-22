@@ -17,13 +17,9 @@ const stuffCtrl = require('../controllers/stuff');
 
 //replacer la route '/api/stuff' par '/' car nous avons le fichier stuff.js dans le dossier routes
 router.post('/', stuffCtrl.createThing);
-  
 router.put('/:id', stuffCtrl.modifyThing);
-  
 router.delete('/:id', stuffCtrl.deleteThing);
-  
 router.get('/:id', stuffCtrl.getOneThing);
-
 // router.get remplace router.use pour repondre uniquement au requete de type get
 router.get('/', stuffCtrl.getAllThing);
 
